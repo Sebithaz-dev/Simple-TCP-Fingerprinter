@@ -15,13 +15,13 @@ A custom-built TCP port scanner designed to explore the fundamentals of **Networ
 
 ## How to use 🐍❔
 1. Clone the repository.
-2. Modify the `h` variable with the target IP address.
+2. Modify the `host` variable with the target IP address.
 3. Run the script:
    `python main.py`
 
 ## Technologies used 🛠️
 **Python 3.x 🐍** 
-Native library: socket (no external dependencies).
+Native library: socket, ipaddress (no external dependencies).
 
 ## Roadmap & Future Improvements 🚧🐍
 
