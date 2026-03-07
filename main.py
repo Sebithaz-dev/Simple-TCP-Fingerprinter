@@ -1,6 +1,6 @@
 import socket
 
-host = "192.168.1.1"
+host = "IP_TARGET" #example: 192.168.1.1
 
 print("""
 ====================================
