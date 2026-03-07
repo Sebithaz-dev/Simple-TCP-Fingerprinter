@@ -1,13 +1,22 @@
 import socket
+import ipaddress
 
 host = "IP_TARGET" #example: 192.168.1.1
 
-print("""
-====================================
-    🔍Simple TCP Fingerprinter🐍
-====================================""")
-print(f"""\n    OPEN TCP PORTS ({host}):
-""")
+def check_ip(host_to_check:str):
+    if host_to_check == "IP_TARGET":
+        print(f" [!] Remember change IP_TARGET! 🐍❗")
+        print(f" [X] Closing script...")
+        exit()
+
+    try:
+        ipaddress.ip_address(host_to_check)
+        return host_to_check
+    except ValueError as e:
+        print(f" [!] Check IP format {host_to_check}! 🐍❗")
+        print(f" [X] Closing script...")
+        exit()
+
 
 def tcp_scan(host:str):
     fp = {
@@ -16,11 +25,12 @@ def tcp_scan(host:str):
         b"220": "FTP/SMTP Banner"
         # more soon :)
     }
+    print(f"    OPEN TCP PORTS ({host}):\n")
 
-    for port in range(1, 8100):
+    for port in range(1, 1024):
 
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.settimeout(3)
+        s.settimeout(1)
 
         try:
             r = s.connect_ex((host,port))
@@ -58,4 +68,10 @@ def tcp_scan(host:str):
             s.close()
 
 if __name__ == "__main__":
-    tcp_scan(host)
+    print("======================================")
+    print("    🔍 Simple TCP Fingerprinter 🐍    ")
+    print("======================================")
+    print("")
+
+    validated_ip = check_ip(host)
+    tcp_scan(validated_ip)
