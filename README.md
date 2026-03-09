@@ -2,26 +2,17 @@
 
 A custom-built TCP port scanner designed to explore the fundamentals of **Network Programming** and **Defensive Cybersecurity**. While tools like NMAP are industry standards, this project focuses on the manual implementation of socket connections and service identification (Banner Grabbing).
 
-## Features ⚙️
+## Features ⚙️🐍
 - **Low-level Socket Implementation:** Uses Python's `socket` library to handle IPv4 and TCP connections.
 - **Banner Grabbing:** Automatically captures service banners (SSH, FTP, SMTP) to identify the underlying daemons (More soon).
 - **Protocol Probing:** Implements a specific logic for HTTP services (ports 80, 8080, 8000) by sending a manual `GET` request when no initial banner is presented.
 - **Hex & Raw Output:** Displays data in hexadecimal and raw formats for deep packet inspection analysis.
-
-## What I Learned 📝
-- **TCP Three-Way Handshake:** Managing `connect_ex` to identify open vs. closed ports.
-- **Timeout Management:** Implementing `settimeout` to handle network latency and unresponsive hosts.
-- **Application Layer Behavior:** Understanding that "connection successful" does not always mean "data received," requiring active probing for certain protocols.
 
 ## How to use 🐍❔
 1. Clone the repository.
 2. Modify the `host` variable with the target IP address.
 3. Run the script:
    `python main.py`
-
-## Technologies used 🛠️
-**Python 3.x 🐍** 
-Native library: socket, ipaddress (no external dependencies).
 
 ## Roadmap & Future Improvements 🚧🐍
 
@@ -31,4 +22,11 @@ Native library: socket, ipaddress (no external dependencies).
     
 - [ ] **Service Mapping:** Expand the fingerprinting dictionary for more common enterprise services.
 
-Developed as part of my journey as a Future AI & Cybersecurity Engineer. ❤️
+---
+
+<p align="start">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExanRyeWJqZjJsZTJ0OXI4MzM4N2lucTA2bHloYnEwYmt4bTFzcjVjaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" alt="Gatito dando un beso" width="540px">
+</p>
+<p align="center">
+  <h4><code>// All projects built with love and a lot of cookies 💖🍪✨</code></h4>
+</p>
